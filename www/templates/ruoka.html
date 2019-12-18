@@ -1,0 +1,20 @@
+
+<div class="spacer"></div>
+<div class="headImg">
+    <img src="./img/plate_t.png" alt="empty plate">
+</div>
+<div>
+
+    <button class="button button-block" ng-click="generateFood()">Mitä ruuaksi?</button>
+
+</div>
+
+<div class="resultDiv">
+    {{ruoka.nimi}}
+</div>
+
+<div class="descDiv" id="descDivId">
+    {{ruoka.kuvaus}}
+</div>
+
+<button class="button button-block kvgBtn" ng-click="browser(ruoka.nimi)">Etsi resepti</button>

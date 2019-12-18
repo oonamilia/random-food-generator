@@ -1,0 +1,53 @@
+
+<ion-tabs class="tabs-dark tabs-top tabs-icon-top myTabs">
+ <ion-tab title="READ" icon-on="ion-alert-circled" icon-off="ion-alert-circled">
+        <ion-content class="tabContent">
+            <h3>In progress</h3>
+            
+        </ion-content>
+    </ion-tab>
+    <ion-tab title="Lisää uusi ruoka" icon-on="ion-android-add" icon-off="ion-android-add">
+        <ion-content class="tabContent">
+            <h3>Lisää uusi ruoka</h3>
+            <form name="addForm" method="post" action="./php/add.php">
+                <label class="item item-input">
+                    <span class="input-label">Ruoka</span>
+                    <input type="text" ng-model="ruoka.nimi" required>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Ruoka vai välipala?
+                    </div>
+                    <select ng-model="ruoka.tyyppi" required>
+                        <option>Ruoka</option>
+                        <option>Välipala</option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Kirjoita kuvaus:</span>
+                    <input type="text" ng-model="ruoka.kuvaus">
+                </label>
+                <!--    <button class="button button-block" ng-click="addToFile(ruoka)" ng-disabled="addForm.$invalid">
+                          <i> Lisää</i>
+                      </button> -->
+                <input class="button button-block" type="submit" value="Lisää" ng-disabled="addForm.$invalid"> 
+            </form>
+        </ion-content>
+    </ion-tab>
+
+    <ion-tab title="Muokkaa" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+        <ion-content class="tabContent">
+
+            <ion-list>
+                <ion-item ng-repeat="r in ruokaa">
+                    {{r.nimi}}
+                </ion-item>
+            </ion-list>
+
+        </ion-content>
+
+    </ion-tab>
+
+</ion-tabs>
+
+
